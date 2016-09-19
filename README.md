@@ -12,27 +12,15 @@ Steps to run project
 
 Spring OAuth 2.0 Demo With Password Grant Type to Get Access Token 
 ----------------------------------------------
-POST /oauth2/oauth/token HTTP/1.1
-Host: localhost:8080
-Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
 
-grant_type=password&username=user1&password=1234567&scope=read&client_id=test&client_secret=%242a%2411%24diFS9cU4kYWfu7luoocRHOGrCMLGx1j5ZZEnJC1zd5zIM1xfeuk8y
+curl -X POST -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-form-urlencoded" -d 'grant_type=password&username=user1&password=user1&scope=read&client_id=test&client_secret=$2a$11$diFS9cU4kYWfu7luoocRHOGrCMLGx1j5ZZEnJC1zd5zIM1xfeuk8y' "http://localhost:8080/oauth2/oauth/token"
 
 Access Protected Resource using Access Token received from earlier call 
 ------------------
 #### URI
 
-GET /oauth2/rest/userMessage HTTP/1.1
-Host: localhost:8080
-Authorization: Bearer 892fc2a3-0f9f-40d2-9540-8482f5cff337
-Cache-Control: no-cache
+curl -X GET -H "Authorization: Bearer 1b34181e-bd8a-41d7-893c-3825ef62899e" -H "Cache-Control: no-cache" "http://localhost:8080/oauth2/rest/userMessage"
 
 #### URI
-GET /oauth2/rest/adminMessage HTTP/1.1
-Host: localhost:8080
-Authorization: Bearer 892fc2a3-0f9f-40d2-9540-8482f5cff337
-Cache-Control: no-cache
 
-
-
+curl -X GET -H "Authorization: Bearer 1b34181e-bd8a-41d7-893c-3825ef62899e" -H "Cache-Control: no-cache" "http://localhost:8080/oauth2/rest/adminMessage"
