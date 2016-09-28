@@ -17,10 +17,10 @@ curl -X POST -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-fo
 
 Access Protected Resource using Access Token received from earlier call 
 ------------------
-#### URI
+#### URL
 
 curl -X GET -H "Authorization: Bearer 1b34181e-bd8a-41d7-893c-3825ef62899e" -H "Cache-Control: no-cache" "http://localhost:8080/oauth2/rest/userMessage"
 
-#### URI
+#### URL
 
 curl -X GET -H "Authorization: Bearer 1b34181e-bd8a-41d7-893c-3825ef62899e" -H "Cache-Control: no-cache" "http://localhost:8080/oauth2/rest/adminMessage"
